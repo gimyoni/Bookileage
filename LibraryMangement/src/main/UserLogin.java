@@ -35,7 +35,7 @@ public class UserLogin {
                 	LoginPanel.getPf_login_pw().setVisible(true);
     				
     				main.MainFrame.getLogin_panel().setVisible(false);
-//    				main.MainFrame.getMaster_panel().setVisible(true);
+    				main.MainFrame.getMy_page_panel().setVisible(true);
     				
 					break;
                 }

@@ -16,13 +16,17 @@ public class MainClass extends JFrame{
 class MainFrame extends JFrame {
 	
 	static LoginPanel login_panel; // 로그인 선택 화면 패널
+	static MyPagePanel my_page_panel; // 로그인 성공 후 -> 마이페이지
 	
 	public MainFrame() {
 		// panel들 초기화
 		login_panel = new LoginPanel();
 		login_panel.setVisible(true);
-		// 먼저 login_panel을 추가함
 		add(login_panel); 
+		
+		my_page_panel = new MyPagePanel();
+		my_page_panel.setVisible(false);
+		add(my_page_panel); 
 		
 		// MainFrame 속성 설정
 		setTitle("도미노(도서관 미림 노리방)"); // JFrame 생성 및 타이틀 설정
@@ -37,4 +41,7 @@ class MainFrame extends JFrame {
 		return login_panel;
 	}
 
+	public static MyPagePanel getMy_page_panel() {
+		return my_page_panel;
+	}
 }
