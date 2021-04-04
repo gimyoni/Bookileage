@@ -31,7 +31,11 @@ public class BookDAO {
 
 		return con;
 	}
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> upstream/main
 	public Vector getBookList(String logined_id) {
 
 		Vector data = new Vector(); // Jtable에 값을 쉽게 넣는 방법 1. 2차원배열 2. Vector 에 vector추가
@@ -75,4 +79,8 @@ public class BookDAO {
 		}
 		return data;
 	}// getMemberList()
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> upstream/main

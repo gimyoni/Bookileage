@@ -11,7 +11,11 @@ public class BookDTO {
 	private int check;
 	private Date date;
 	private String genre;
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> upstream/main
 	public int getBook_numaber() {
 		return book_numaber;
 	}
@@ -60,4 +64,8 @@ public class BookDTO {
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> upstream/main

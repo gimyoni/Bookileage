@@ -8,8 +8,9 @@ import java.sql.Connection;
 
 import javax.swing.JOptionPane;
 
-public class UserLogin {
-	public UserLogin() {
+
+public class AdminLogin {
+	public AdminLogin(Library library) {
 		String query;
 		PreparedStatement pstmt = null;
 		Connection conn = null;
@@ -18,7 +19,7 @@ public class UserLogin {
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/library?useSSL=false", "root", "1234");
             
-            query = "SELECT id, password FROM user";
+            query = "SELECT id, password FROM admin";
 			pstmt = conn.prepareStatement(query);
 			rset = pstmt.executeQuery();
              
@@ -34,14 +35,10 @@ public class UserLogin {
                 	LoginPanel.getTf_login_id().setVisible(true);
                 	LoginPanel.getPf_login_pw().setVisible(true);
     				
-<<<<<<< HEAD
-    				main.MainFrame.getLogin_panel().setVisible(false);
-//    				main.MainFrame.getMaster_panel().setVisible(true);
-    				main.MainFrame.getMy_page_panel().setVisible(true);
-=======
+                	library.loginPanel.setVisible(false);
+                	library.adminPagePanel.setVisible(true);
 //    				main.MainFrame.getLogin_panel().setVisible(false);
 //    				main.MainFrame.getMaster_panel().setVisible(true);
->>>>>>> upstream/main
     				
 					break;
                 }
