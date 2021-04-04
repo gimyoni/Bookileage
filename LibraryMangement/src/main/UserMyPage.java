@@ -8,8 +8,4 @@ public class UserMyPage {
 	public UserMyPage() {
 
 	}
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> upstream/main

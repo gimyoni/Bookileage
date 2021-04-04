@@ -11,6 +11,7 @@ public class Library extends JFrame{
 	
 	public LoginPanel loginPanel = new LoginPanel(this);
 	public AdminPagePanel adminPagePanel = new AdminPagePanel(this);
+	public MyPagePanel myPagePanel = new MyPagePanel(this);
 	
 	public Library() {
 		
@@ -33,6 +34,4 @@ public class Library extends JFrame{
 		adminPagePanel.setVisible(false);
 		
 	}
-	
 }
-
