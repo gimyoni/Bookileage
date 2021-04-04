@@ -64,7 +64,7 @@ class LoginPanel extends JPanel implements ActionListener, ItemListener{
 			public void actionPerformed(ActionEvent e) {
 				if(e.getSource()==btn_login) {
 					if(chk==0) {
-						new UserLogin();
+						new UserLogin(library);
 						System.out.println("회원 로그인");
 					}else if(chk==1) {
 						new AdminLogin(library);

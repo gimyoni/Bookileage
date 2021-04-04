@@ -9,7 +9,7 @@ import java.sql.Connection;
 import javax.swing.JOptionPane;
 
 public class UserLogin {
-	public UserLogin() {
+	public UserLogin(Library library) {
 		String query;
 		PreparedStatement pstmt = null;
 		Connection conn = null;
@@ -34,8 +34,8 @@ public class UserLogin {
                 	LoginPanel.getTf_login_id().setVisible(true);
                 	LoginPanel.getPf_login_pw().setVisible(true);
     				
-//    				main.MainFrame.getLogin_panel().setVisible(false);
-//    				main.MainFrame.getMaster_panel().setVisible(true);
+    				library.loginPanel.setVisible(false);
+    				library.myPagePanel.setVisible(true);
     				
 					break;
                 }
