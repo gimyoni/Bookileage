@@ -8,7 +8,7 @@ import java.sql.Connection;
 
 import javax.swing.JOptionPane;
 
-public class UserLogin {
+public class UserLogin {	
 	public UserLogin(Library library) {
 		String query;
 		PreparedStatement pstmt = null;
@@ -18,7 +18,7 @@ public class UserLogin {
             Class.forName("com.mysql.cj.jdbc.Driver");
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/library?useSSL=false", "root", "1234");
             
-            query = "SELECT id, password FROM user";
+            query = "SELECT * FROM user";
 			pstmt = conn.prepareStatement(query);
 			rset = pstmt.executeQuery();
              
@@ -33,7 +33,24 @@ public class UserLogin {
                 	
                 	LoginPanel.getTf_login_id().setVisible(true);
                 	LoginPanel.getPf_login_pw().setVisible(true);
+                	
+                	library.myPagePanel = new MyPagePanel(library, rset.getString("id"));
+    				library.add(library.myPagePanel);
+    				library.myPagePanel.setVisible(false);
     				
+    				library.returnPanel = new ReturnPanel(library, rset.getString("id"));
+    				library.add(library.returnPanel);
+    				library.returnPanel.setVisible(false);
+                	
+                	library.myPagePanel.name_label.setText(rset.getString("name"));
+                	library.myPagePanel.id_label.setText(rset.getString("id")); 
+                	library.myPagePanel.borrow_cnt_label.setText(String.valueOf(rset.getInt("borrow_cnt")));
+                	library.myPagePanel.return_cnt_label.setText(String.valueOf(rset.getInt("return_cnt")));
+                	
+                	library.myPagePanel.overdue_cnt_label.setText(String.valueOf(rset.getInt("overdue_cnt")));
+                	library.myPagePanel.email_label.setText(rset.getString("email"));
+                	library.myPagePanel.setDbPw(rset.getString("password"));
+                	
     				library.loginPanel.setVisible(false);
     				library.myPagePanel.setVisible(true);
     				
